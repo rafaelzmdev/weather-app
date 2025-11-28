@@ -1,6 +1,6 @@
 {
     "name": "weather-app",
-    "main": "server/index.js",
+    "main": "server/weather.js",
     "version": "1.0.0",
     "description": "",
     "scripts": {
@@ -13,12 +13,13 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "type": "commonjs",
+    "type": "module",
     "bugs": {
         "url": "https://github.com/rafaelzmdev/weather-app/issues"
     },
     "homepage": "https://github.com/rafaelzmdev/weather-app#readme",
     "dependencies": {
+        "cors": "^2.8.5",
         "dotenv": "^17.2.3",
         "ejs": "^3.1.10",
         "express": "^5.1.0",
