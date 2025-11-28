@@ -3,6 +3,7 @@ import cors from "cors";
 const app = express()
 // Middleware to parse JSON bodies
 app.use(express.json());
+app.use(express.static('public'))
 app.use(cors());
 app.post("/api/getcity", (req, res) => {
   const { city } = req.body;        // extract the data sent from frontend
@@ -19,9 +20,9 @@ app.post("/api/getcity", (req, res) => {
         const longitude = data.results[0].longitude;
         console.log(latitude, longitude)
     })
-    .catch(error => console.error(error))
+    .catch(error => console.error(error), console.log("Couldn't get proper API request. Maybe a typo in the city name?"))
 });
-app.listen(5500, () => console.log("Server running on port 5500"));
+app.listen(3000, () => console.log("Server running on port 3000"));
 //my code from here onwards
 
 
