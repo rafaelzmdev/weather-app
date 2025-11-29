@@ -4,6 +4,7 @@ const app = express()
 app.use(express.json());
 app.use(express.static('public'))
 app.use(cors());
+let weathercode, is_day, windspeed, temperature;
 app.post("/api/getcity", (req, res) => {
   const { city } = req.body;       
   if (!city) {
