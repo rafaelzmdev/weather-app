@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(express.static('public'))
 app.use(cors());
 app.post("/api/getcity", (req, res) => {
-  const { city } = req.body;       
+  const city = req.body.city.trim();       
   if (!city) {
     return res.sendStatus(400)
   }

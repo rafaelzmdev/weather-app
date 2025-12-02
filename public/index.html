@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div>
+    <div class="inputscontainer">
         <p>Insert your city name here</p>
         <textarea id="cityname"></textarea>
         <button type="button", id="inputbutton", style="height: 40px; width: 200px;">Submit city</button>
@@ -17,12 +17,15 @@
             <div class="spinner"></div>
         </div>
     </div>
-    <div id="panel" class="panel">
-<!--class="hidden", removed for coding and styling-->
-        <h1 id="weatherid">It's currently <span id="label"></span> in <span id="citylabel"></span></h1>
-        <i id="icon" class="icon"></i><br>
-        <h2 id="temperatures">Temperature: <span id="celciustemp"></span> C° <span id="fahrenheitemp"></span> F°</h2>
-        <h2 id="wind">Wind: <span id="windval"></span> km/h</h2>
+    <div class="hidden", id="hide">
+        <div id="panel" class="panel">
+            <h1 id="weatherid">It's currently <span id="label"></span> in <span id="citylabel"></span></h1>
+            <i id="icon" class="icon"></i><br>
+            <div class="temps">
+                <h2 id="temperatures"></h2><span id="celciustemp"></span> C° <span id="fahrenheitemp"></span> F°</h2>
+            </div>
+            <h2 id="wind">Wind: <span id="windval"></span> km/h</h2>
+        </div>
     </div>
 </body>
 </html>

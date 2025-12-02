@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const city = input.value;
         document.getElementById("loader").classList.remove("hidden"),
         document.getElementById("loader").classList.add("visible")
+        document.getElementById("hide").classList.remove("visible"),
+        document.getElementById("hide").classList.add("hidden");
         fetch("http://localhost:3000/api/getcity", {
             method: "POST",                     
             headers: {"Content-Type": "application/json"},
@@ -23,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
             //console.log(city, weather, daynight, wind, temp)
             document.getElementById("loader").classList.remove("visible"),
             document.getElementById("loader").classList.add("hidden")
-            document.getElementById("panel").classList.remove("hidden");
-            document.getElementById("panel").classList.add("visible");
+            document.getElementById("hide").classList.remove("hidden");
+            document.getElementById("hide").classList.add("visible");
             //copied this repetitive part of code from a stack overflow post; working fine lol (except for the label thing; had to do that manually)
             const weatherIconMapping = {
             0: { day: "wi-day-sunny", night: "wi-night-clear", label: "clear" },         
