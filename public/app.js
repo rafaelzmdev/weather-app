@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const button = document.getElementById("inputbutton");
     const input = document.getElementById("cityname");
     let temp, weather, daynight, wind;
-    let label;
     button.addEventListener("click", () => {
         const city = input.value;
         document.getElementById("loader").classList.remove("hidden"),
@@ -19,8 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
             daynight = data.daynight,
             wind = data.wind,
             temp = data.temp
-            fahrenheitemp = (temp * 9/5 +32)
-            console.log(city, weather, daynight, wind, temp)
+            let fahrenheit = (temp * 1.8 +32)
+            let fahrenheitemp = Math.round(fahrenheit)
+            //console.log(city, weather, daynight, wind, temp)
             document.getElementById("loader").classList.remove("visible"),
             document.getElementById("loader").classList.add("hidden")
             document.getElementById("panel").classList.remove("hidden");
@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
             96: { day: "wi-storm-showers", night: "wi-storm-showers", label: "storming" },
             99: { day: "wi-storm-showers", night: "wi-storm-showers", label: "storming" }
             }
-            const label = label
             const iconElement = document.getElementById("icon");
             const weatherCode = weather;
             const isDay = daynight === 1;
@@ -57,8 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         ? weatherIconMapping[weatherCode][isDay ? "day" : "night"]
                         : "wi-na"; // fallback
             iconElement.className = `wi ${iconClass}`;
-            document.getElementById("label").innerHTML = label;
-            document.getElementById("city").innerHTML = city;
+            let weatherlabel = weatherIconMapping[weatherCode]?.label
+            document.getElementById("label").innerHTML = weatherlabel;
+            document.getElementById("citylabel").innerHTML = city;
+            document.getElementById("celciustemp").innerHTML = temp;
+            document.getElementById("fahrenheitemp").innerHTML = fahrenheitemp;
+            document.getElementById("windval").innerHTML = wind;
         }
         ) 
         .catch(err => console.error(err));
