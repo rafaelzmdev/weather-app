@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="app.js"></script>
+    <link rel="stylesheet" href="weather-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <textarea id="cityname">New York</textarea>]
-    <button type="button", id="inputbutton", style="height: 40px; width: 200px;">Submit city</button>
+    <div>
+        <p>Insert your city name here</p>
+        <textarea id="cityname"></textarea>
+        <button type="button", id="inputbutton", style="height: 40px; width: 200px;">Submit city</button>
+        <div id="loader" class="hidden">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <div id="panel", class="panel">
+<!--class="hidden", removed for coding and styling-->
+        <h1 id="weatherid">It's currently <span id="label"></span> in <span id="city"></span></h1>
+        <i id="icon" class="icon"></i><br>
+        <h2 id="temperatures">Temperature: x C°, x F°</h2>
+        <h2 id="wind">Wind: x kmph</h2>
+    </div>
 </body>
 </html>
