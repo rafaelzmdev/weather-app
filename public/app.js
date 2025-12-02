@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
             temp = data.temp
             let fahrenheit = (temp * 1.8 +32)
             let fahrenheitemp = Math.round(fahrenheit)
-            //console.log(city, weather, daynight, wind, temp)
             document.getElementById("loader").classList.remove("visible"),
             document.getElementById("loader").classList.add("hidden")
             document.getElementById("hide").classList.remove("hidden");
@@ -53,10 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             const iconElement = document.getElementById("icon");
             const weatherCode = weather;
+            //another short section from stack overflow
             const isDay = daynight === 1;
             const iconClass = weatherIconMapping[weatherCode]
                         ? weatherIconMapping[weatherCode][isDay ? "day" : "night"]
-                        : "wi-na"; // fallback
+                        : "wi-na"; 
             iconElement.className = `wi ${iconClass}`;
             let weatherlabel = weatherIconMapping[weatherCode]?.label
             document.getElementById("label").innerHTML = weatherlabel;
