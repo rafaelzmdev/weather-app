@@ -7,13 +7,11 @@
 }
 body {
   background-image: url(/public/assets/bgidea4.jpg);
-  /*background-color:rgba(128, 0, 128, 0.836);*/
   background-position:cover;
   background-repeat: no-repeat;
-
 }
 .hidden {
-    opacity: 0;
+    opacity: 0;  
     pointer-events: none;
 }
 .visible {
@@ -35,6 +33,7 @@ body {
   border-top-color: #f5f5f5;
   border-radius: 50%;
   animation: spin 1s linear infinite;
+  filter: blur(0.25px)
 }
 
 @keyframes spin {
@@ -42,9 +41,9 @@ body {
 
 }
 #icon {
-    font-size: 6rem;
-    padding-top: 2rem;
-    color: white;
+    font-size: 7.5rem;
+    padding-top: 0.25rem;
+    color: rgba(255, 255, 255, 0.856);
 }
 
 .inputscontainer {
@@ -56,37 +55,69 @@ body {
 }
 
 .inputscontainer p {
-  font-size: 1.5rem;
+  font-size: 1.55rem;
+  font-weight: 610;
   pointer-events: none;
 }
 
 .inputscontainer textarea {
   resize: none;
-  font-size: 1.6rem;
-  font-weight: 580;
+  font-size: 1.75rem;
+  font-weight: 570;
   min-height: fit-content;
-  min-width: 2vw;
+  width: 40vw;
+  max-width: 20rem;
   text-align: center;
-  background-color: rgba(255, 166, 94, 0.089);
-  -webkit-backdrop-filter:blur(2000%);
+  background-color: rgba(255, 167, 94, 0.062);
+  -webkit-backdrop-filter:blur(2px);
   border-style: solid;
-  border-color: rgba(192, 192, 192, 0.295);
-  border-width: 0.225rem;
+  border-color: rgba(192, 192, 192, 0.322);
+  border-width: 0.185rem;
   border-radius: 2.5rem;
   padding: 0.75rem;
+  margin-bottom: 0.75rem;
   color: rgba(255, 255, 255, 0.932);
+  overflow: hidden;
 }
 .inputscontainer textarea:focus{
   outline: none;
   box-shadow: none;
-  border-width: 0.3rem;
+  border-color: rgba(255, 255, 255, 0.39);
+}
+.inputscontainer button {
+  color: white;
+  background-color:rgba(201, 143, 96, 0.274);
+  border-color: rgba(231, 230, 230, 0.692);
+  border-style: solid;
+  border-width: 0.225rem;
+  font-weight: 610;
+  border-radius: 2rem;
+  font-size: 1.55rem;
+  width: 12rem;
+  color: rgba(255, 255, 255, 0.986);
+}
+.inputscontainer button:hover {
+  transform:translateY(-2.5px);
+  border-color: rgba(255, 255, 255, 0.808);
 }
 .panel {
-  color: white;
+  color: rgba(255, 255, 255, 0.897);
   display: flex;
   align-items: center;
   flex-flow: column wrap;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.content {
+  max-width: fit-content;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 1rem;
+  backdrop-filter: blur(1.75px);
+  background: rgba(255, 255, 255, 0.027);
+  border: 1px solid rgba(255, 255, 255, 0.082);
+  border-radius: 80px;
 }
 .temps {
-  font-size: 2rem;
+  font-size: 2.75rem;
 }

@@ -1,1 +1,2 @@
 The classic app everybody makes when learning code. The JS weather app.
+This one is responsive on mobile, as it uses only flexbox and relative sizing. Fetches open-meteo's public geolocation API, then fetches the weather API to retrieve data regarding the weather state of a specific city. Error handling is.. not perfect. This is my first ever backend server, did it by myself so I still think I did a good job. Feel free to use this app for inspiration or anything really.
